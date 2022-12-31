@@ -17,6 +17,7 @@ module.exports = class extends Component {
         return <html lang={language ? language.substr(0, 2) : ''}>
             <Head site={site} config={config} helper={helper} page={page} />
             <body class={`is-${columnCount}-column`}>
+                <canvas id="universe"></canvas>
                 <Navbar config={config} helper={helper} page={page} />
                 <section class="section">
                     <div class="container">
@@ -29,8 +30,12 @@ module.exports = class extends Component {
                                 'is-8-tablet is-8-desktop is-8-widescreen': columnCount === 2,
                                 'is-8-tablet is-8-desktop is-6-widescreen': columnCount === 3
                             })} dangerouslySetInnerHTML={{ __html: body }}></div>
+                            {/* imaegoo fix: 防止左边栏已加载，右边栏未加载时，内容区不居中的问题，注意禁止用 js 解决，用两组 style 来控制它们加载完成后再显示 */}
+                            <style dangerouslySetInnerHTML={{ __html: '.column.column-left,.column.column-right{display:none}' }}></style>
                             <Widgets site={site} config={config} helper={helper} page={page} position={'left'} />
                             <Widgets site={site} config={config} helper={helper} page={page} position={'right'} />
+                            {/* imaegoo fix: 到这里时 widgets 已经加载完毕，显示 widgets */}
+                            <style dangerouslySetInnerHTML={{ __html: '.column.column-left,.column.column-right{display:block}' }}></style>                        
                         </div>
                     </div>
                 </section>

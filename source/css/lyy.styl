@@ -1,0 +1,40 @@
+screen-tablet = 769px
+screen-desktop = 1088px
+screen-widescreen = 1280px
+screen-fullhd = 1472px
+screen-onek = 1700px
+
+
+// 左侧栏重新设置一下大小
+@media screen and (min-width: screen-onek)
+    .container
+        max-width: 1600px
+        width: 1600px
+        .column.is-3-widescreen
+            width: 22%
+        .column.is-6-widescreen
+            width: 56%
+
+@media screen and (min-width: screen-tablet)
+    .column-main,
+    .column-left,
+    .column-right,
+    .column-right-shadow
+        &.is-sticky
+            top: 70px
+    .navbar
+        z-index: 100
+        position: sticky
+        top: 0
+
+// 文章样式
+article.article
+    .article-meta
+        overflow-y: hidden
+    .title
+        width: fit-content
+    // 设置文章图片居中
+    img
+        margin: auto
+        display: block
+        max-height: 800px
