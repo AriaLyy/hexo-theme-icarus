@@ -5,6 +5,21 @@ screen-fullhd = 1472px
 screen-onek = 1700px
 
 
+body
+    background-color: transparent
+body:before
+    content: ''
+    position: fixed
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    // transition: opacity 1s
+    background: url("/blog-bg.webp") no-repeat;
+    background-size: 100% 100%; // 背景属性的设置必须要在资源设置之后
+
+
 // 左侧栏重新设置一下大小
 @media screen and (min-width: screen-onek)
     .container
