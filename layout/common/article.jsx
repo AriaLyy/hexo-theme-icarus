@@ -96,6 +96,9 @@ module.exports = class extends Component {
                     {!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">
                         <span class="mr-2">#</span>
                         {page.tags.map(tag => {
+                            if (tag.name ==null){
+                                return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>fuck</a>;
+                            }
                             return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
                         })}
                     </div> : null}
