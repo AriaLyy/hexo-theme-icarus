@@ -7,10 +7,12 @@ class qiniu extends Component {
     render() {
         const {
             imgUrl,
-            adUrl
+            adUrl,
+            adDesc
         } = this.props;
         return <div class="card widget" data-type="qiniu">
             <div class="card-content">
+                <h3 class="menu-label">{adDesc}</h3>
                 <nav class="level">
                     <div class="level-item has-text-centered flex-shrink-1">
                         <div>
@@ -29,13 +31,15 @@ qiniu.Cacheable = cacheComponent(qiniu, 'widget.qiniu', props => {
     // 配置的属性
     const {
         ad_url,
-        img_url
+        img_url,
+        ad_desc
     } = widget;
     const { url_for, _p, __ } = helper;
     
     return {
         imgUrl: url_for(img_url),
-        adUrl: url_for(ad_url)
+        adUrl: url_for(ad_url),
+        adDesc: ad_desc
     };
 });
 
