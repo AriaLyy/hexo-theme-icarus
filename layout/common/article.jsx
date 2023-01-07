@@ -91,7 +91,8 @@ module.exports = class extends Component {
                     <div class="content" dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
                     {/* Licensing block */}
                     {shouldShowUpdated? null: page.updated = null }
-                    {!index && article && article.licenses && Object.keys(article.licenses)
+            
+                    {!index && article && article.licenses && Object.keys(article.licenses) && (page.showLicenses == null || page.showLicenses)
                         ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
                     {/* Tags */}
                     {!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">
