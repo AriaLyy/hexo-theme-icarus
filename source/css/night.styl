@@ -53,11 +53,13 @@ night()
             display: inline-block
 
     // navigation bar, cards
-    .navbar-main .navbar-menu .navbar-item
+    .navbar-main, .navbar-item
         &:hover,
         &:focus
             color: #ffffff
             background-color: dark-primary-color
+    .navbar-menu, .navbar-brand
+        background-color: dark-primary-color
     .navbar,
     .card
         background-color: rgba(40,44,52,0.5)
