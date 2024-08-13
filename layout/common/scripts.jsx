@@ -40,7 +40,7 @@ module.exports = class extends Component {
             <script src={url_for('/js/main.js')} defer></script>
             <script src={url_for('/js/night.js')} defer={true}></script>
             <script src={url_for('/js/universe.js')} defer={true}></script>
-            <script src={url_for('https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js')} defer={true}></script>
+            <script src={url_for('https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/canvas-nest.js/2.0.4/canvas-nest.js')} defer={true}></script>
         </Fragment>;
     }
 };
